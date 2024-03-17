@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM PROJECT</title>
+<style>
+  .subscribe{
+    background-color: brown;
+    color:aliceblue;
+    border:none;
+    padding:5px;
+    border-radius: 2px;
+  }
+</style>
+<script>
+  function subscribe_but(){
+    const b=document.querySelector(".subscribe");
+    console.log(b);
+    const bi=document.querySelector("#s");
+    console.log(bi);
+    if(b.innerText==="SUBSCRIBE"){
+      document.querySelector(".subscribe").innerHTML="SUBSCRIBED";
+      document.getElementById("b").style.backgroundColor="blue";
+    }
+    else{
+      document.querySelector(".subscribe").innerHTML="SUBSCRIBE";
+      document.getElementById("b").style.backgroundColor="brown";
+    }
+  }
+  function fun(){
+  const button1=document.querySelector('#disp');
+  console.log(button1);
+
+  const myButton = document.querySelector('#myButton');
+  myButton.innerHTML="Button2"
+  console.log(myButton);
+  }
+
+  function change_head(){
+    document.getElementById("res").innerHTML="You chose Heads";
+  }
+  function change_tail(){
+    document.getElementById("res").innerHTML="You chose Tails";
+  }
+
+  function display(){
+    const text=document.querySelector("#name").value;
+    console.log(`Your name is ${text}`);
+    document.getElementById("greet").innerHTML=`Your name is ${text}`;
+  }
+
+
+</script>
+</head>
+<body>
+  <button id="s">Hello All</button>
+  <p>YOUTUBE SUBSCRIBE BUTTON</p>
+  <button class="subscribe" id="b" onclick="subscribe_but();">SUBSCRIBE</button>
+  <button id="disp">Welcome</button>
+  <button id="myButton" onclick="fun();">Click me!</button><br><br>
+  <!--Heads and Tails-->
+  <button id="head" onclick="change_head();">Heads</button>
+  <button id="tails" onclick="change_tail();">Tails</button>
+  <p id="res"></p>
+  <!--Text box-->
+  <input type="text" id="name" name="Name">
+  <input type="submit" onclick="display();">
+  <p id="greet"></p>
+
+</body>
+</html>

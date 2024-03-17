@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BASICS</title>
+  <style>
+    button{
+      border-radius: 50px;
+    }
+
+    #calc{
+      background-color: black;
+      color: white;
+      display: inline-block;
+      padding: 10px;
+    }
+    #string{
+      width:100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+    /*
+    To make the text overflow to be wrapped we need
+
+    width:100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    */
+  </style>
+</head>
+<body>
+  <script>
+    let name="My name is\:";
+    let my_name="Varshini S"
+    console.log(name+my_name);
+    let cost=1*5+1*3;
+    console.log("$"+cost);
+    console.log(`Total: $${1*5+1*3}`);
+    //alert(`Total: $${1*5+1*3}`);
+    let cos=(599+295)/100;
+    let str="Total cost:$"+cos+"\nThank you, come again!";
+    //alert(str);
+    //alert("Welcome");
+    console.log(`My name is ${my_name}`);
+    const c=5+2*3+9;
+    console.log(`Cost is:$${c}`);
+    let tax=0.1*c
+    console.log(`Tax is:$${tax}`);
+    console.log(`Cost after adding tax:$${c+tax}`);
+    let cart_quantity=0;
+
+    function add(){
+      alert("Added");
+    }
+    function buy(){
+      alert("Loading...");
+      alert("Purchased");
+    }
+    let cart;
+    function addtocart(){
+      cart=cart_quantity+1;
+      if(cart<=10){
+        cart_quantity+=1;
+        console.log(`Cart Quantity:$${cart_quantity}`);
+      }
+      else
+        console.log("Cart reached maximium limit");
+    }
+    function removecart(){
+      cart=cart_quantity-1;
+      if(cart>0){
+        cart_quantity-=1;
+        console.log(`Cart Quantity:$${cart_quantity}`);
+      }
+      else
+        console.log("Cart has no sufficient items");
+    }
+    
+    function add2(){
+      cart=cart_quantity+2;
+      if(cart<=10){
+        cart_quantity+=2;
+        console.log(`Cart Quantity:$${cart_quantity}`);
+      }
+      else
+        console.log("Cart reached maximium limit");
+    }
+    function add3(){
+      cart=cart_quantity+3;
+      if(cart<=10){
+        cart_quantity+=3;
+        console.log(`Cart Quantity:$${cart_quantity}`);
+      }
+      else
+        console.log("Cart reached maximium limit");
+    }
+    function sub2(){
+      cart=cart_quantity-2;
+      if(cart>0){
+        cart_quantity-=2;
+        console.log(`Cart Quantity:$${cart_quantity}`);
+      }
+      else
+        console.log("Cart has no sufficient items");
+    }
+    
+    function sub3(){
+      cart=cart_quantity-3;
+      if(cart>0){
+        cart_quantity-=3;
+        console.log(`Cart Quantity:$${cart_quantity}`);
+      }
+      else
+        console.log("Cart has no sufficient items");
+    }
+
+    let cal="";
+
+
+    function calculator(x){
+      cal+=x;
+      console.log(cal);
+      document.getElementById("string").innerHTML=cal;
+    }
+
+    function display(){
+      cal=eval(cal);
+      console.log(cal);
+      document.getElementById("string").innerHTML=cal;
+      cal="";
+    }
+  </script>
+  <button>Click</button>
+  <button>Varshini</button>
+  <button>Apple</button>
+  <p>Hello, world!</p>
+  <p>Heavy floods and water logs in Chennai city</p>
+
+  <button style="background-color: yellow;">Add to cart</button>
+  <button style="background-color: orange;">Buy now</button>
+
+  <p><b>ITEMS</b></p>
+  <p style="font-size: 10px;"><b>Chicken Biryani</b></p>
+  <br>
+  <button style="background-color: yellow;" onclick="add()">Add to basket</button>
+  <button style="background-color: orange;" onclick="buy()">Buy now</button>
+  <p>Cart quantity</p>
+  <button onclick="addtocart()">add</button>
+  <button onclick="removecart()">remove</button><br><br>
+  <button onclick="add2()">+2</button>
+  <button onclick="add3()">+3</button><br><br>
+  <button onclick="sub2()">-2</button>
+  <button onclick="sub3()">-3</button><br><br>
+
+  <div id="calc">
+    <p><b>CALCULATOR</b></p>
+    <div id="string" style="text-align: right;"></div>
+    <button onclick="calculator(1)">1</button>
+    <button onclick="calculator(2)">2</button>
+    <button onclick="calculator(3)">3</button>
+    <button onclick="calculator('+')">+</button><br><br>
+    <button onclick="calculator(4)">4</button>
+    <button onclick="calculator(5)">5</button>
+    <button onclick="calculator(6)">6</button>
+    <button onclick="calculator('-')">-</button><br><br>
+    <button onclick="calculator(7)">7</button>
+    <button onclick="calculator(8)">8</button>
+    <button onclick="calculator(9)">9</button>
+    <button onclick="calculator('*')">*</button><br><br>
+    <button onclick="calculator(0)">0</button>
+    <button onclick="calculator('.')">.</button>
+    <button onclick="display()">=</button>
+    <button onclick="calculator('/')">/</button>
+  </div>
+
+  
+</body>
+</html>

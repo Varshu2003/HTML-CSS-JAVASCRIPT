@@ -1,0 +1,30 @@
+.ldiv{
+    height:100%;
+    top:62px;
+    width:70px;
+    left:0px;
+    bottom:0px;
+    display:flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: white;
+}
+.sidebar{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.sidebar:hover{
+    background-color: rgb(229, 231, 233);
+}
+.sidebar img{
+    height:30px;
+    margin-bottom: 5px;
+}
+.sidebar div{
+    font-size: 10px;
+    font-weight: 200;
+}

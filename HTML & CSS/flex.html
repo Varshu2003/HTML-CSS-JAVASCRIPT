@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Flex Box
+        </title>
+        <link rel="stylesheet" href="header.css">
+        <style>
+          #one{
+            display:flex;
+            flex-direction: row;
+            flex:200px 1fr 300px;
+
+          }
+
+          .left{
+            background-color: grey;
+            position:fixed;
+            display:flex;
+            height:100%;
+            left:0px;
+            bottom:0px;
+            flex-direction: column;
+          }
+        </style>
+
+    </head>
+    <!-- Columns here act as inline-block elements and occupy only the necessary space -->
+    <body>
+        <div id="one">
+            <div style="color:grey;background-color: brown;">Column 1</div>
+            <div style="color:blue;background-color: blueviolet;">Column 2<p style="color:blue;background-color: blueviolet;">Paragraph</p></div>
+            <div style="color:pink;background-color: aqua;flex: 1;">Column 3</div>
+            <div style="color:grey;background-color: brown;flex:2;">Column 1</div>
+        </div>
+
+        <div class="left">
+            <div style="color:grey;background-color: brown;">Column 1</div>
+            <div style="color:blue;background-color: blueviolet;">Column 2<p style="color:blue;background-color: blueviolet;">Paragraph</p></div>
+            <div style="color:pink;background-color: aqua;flex: 1;">Column 3</div>
+            <div style="color:grey;background-color: brown;flex:2;">Column 1</div>
+        </div>
+
+    </body>
+</html>

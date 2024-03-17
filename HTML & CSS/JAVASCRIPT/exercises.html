@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises</title>
+      <script>
+        let hour=15;
+        const name="VARSHINI S";
+        if(hour>=6 && hour<=12)
+          console.log(`GOOD MORNING ${name}`);
+        else if(hour>=13 && hour<=17)
+          console.log(`GOOD AFTERNOON ${name}`);
+        else
+          console.log(`GOOD NIGHT ${name}`);
+        //Amusement Park
+        let age=5;
+        let holiday=true;
+        if(((age>0 && age<=6) ||(age>=65)) && holiday==true)
+          console.log("DISCOUNT");
+        else
+         console.log("NO DISCOUNT");
+        //Heads and Tails
+        let randnumber=Math.random();
+        let guess="head";
+        result=randnumber<0.5?"head":"tail";
+        console.log(result==guess?"YOU WIN":"YOU LOSE");
+        //function
+        function greet(name){
+        if(name)
+          console.log(`HELLO ${name}`);
+        else
+          console.log("HELLO THERE!")
+        }
+        greet("Varshini");
+        greet("Kashini");
+        greet();
+        const object1={name:"Basketball",price:2095};
+        console.log(object1);
+        object1.price=object1.price+500;
+        console.log(object1);
+        object1[`delivery_time`]="3days";
+        console.log(object1);
+        const object2={name:"Volleyball",price:3000};
+        object2[`delivery_time`]="2days";
+        function low_price(obj1,obj2){
+          if(obj1.price>obj2.price)
+            console.log(obj2.name);
+          else
+            console.log(obj1.name);
+        }
+        low_price(object1,object2);
+        //Comparison we use JSON.stringify and _.isEqual() in Lodash library
+        const object3={name:"Basketball",price:2095,delivery_time:"3days"};
+        const object4={name:"Basketball",price:2095,delivery_time:"3days"};
+        console.log(JSON.stringify(object1)==JSON.stringify(object2));
+        console.log(JSON.stringify(object3)==JSON.stringify(object4));
+        let greet1="GOOD MORNING ";
+        let l_case=greet1.toLowerCase();
+        console.log(l_case);
+        let rep=greet1.repeat(2);
+        console.log(rep);
+        //localStorage
+        let score=JSON.parse(localStorage.getItem('score'))||{win:0,loss:0,tie:0};
+        function winbutton(){
+          score.win+=1;//Dot notation
+          console.log(score)
+        }
+        function lossbutton(){
+          score.loss+=1;
+          console.log(score)
+        }
+        function tiebutton(){
+          score.tie+=1;
+          console.log(score)
+        }
+        localStorage.setItem('score',JSON.stringify(score));
+        console.log(score)
+
+        let obj={name:"apple",cost:100,place:"Kashmir",fun: function objfunc(){
+          console.log("I'm th function inside the object");
+        }};
+        console.log(obj);
+        console.log(obj.name);
+        console.log(obj["cost"]);
+        obj.fun();
+        let message="Good Luck"
+
+        let ob={
+          //message:"message",
+          message,
+          //method function fun(){
+          //  console.log(method);
+          //  }
+          method(){
+            console.log("method");
+          }
+        }
+        console.log(ob);
+        ob.method();
+
+        const arr1=function(){
+          console.log("This is using anonymous function");
+        }
+        arr1();
+
+        //Hoisting refers to the ability of calling unction before declaring it
+        greet();
+        function greet(){
+          console.log("Hello,all!");
+        }
+        greet();
+
+        let val=setTimeout(function time(){
+          console.log("Timed function");
+        },3000);
+        console.log(val);
+        clearInterval(val);
+        val=setTimeout(function time(){
+          console.log("Timed function");
+        },3000);
+        console.log(val);
+
+        ['hello','hi','good','morning','all'].forEach(function(value,index){
+          console.log(value,index);
+        });
+        
+        //forEach does not support continue instead return is used
+        [1,2,3,4,5].forEach(function(value){
+          if(value%3==0){
+            return
+          }
+          console.log(value);
+        });
+
+        function change(){
+          setTimeout(function ch(){
+            document.getElementById("start").innerHTML="Finished";
+          },3000);
+          document.getElementById("start").innerHTML="Loading.....";
+        }
+
+        function added(){
+          document.getElementById("added").innerHTML="Added to Cart";
+          setTimeout(function addedCart(){
+            document.getElementById("added").innerHTML=""; 
+          },2000);
+        }
+
+        //Changing title
+        let c=0;
+        let value;
+        function title(){
+          c=c+1;
+          value=setTimeout(function msg(){
+            document.title=`(${c}) New Messages`;
+          },2000);
+          setTimeout(function t(){
+            clearInterval(value);
+            document.title="Exercises";
+            title();
+          },3000);
+        }
+        title();
+
+     </script>
+  </head>
+  <body>
+    <button onclick="winbutton()">WIN</button>
+    <button onclick="lossbutton()">LOSS</button>
+    <button onclick="tiebutton()">TIE</button>
+    <br><br>
+    <!-- Start, Loading..., Finished-->
+    <button id="start" onclick="change();">Start</button>
+    <!-- Add to cart-->
+    <button id="addto" onclick="added();">Add to Cart</button>
+    <p id="added"></p>
+  </body>
+</html>

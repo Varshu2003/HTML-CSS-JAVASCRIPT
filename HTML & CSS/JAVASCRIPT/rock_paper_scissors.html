@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock,Paper,Scissor</title>
+    <style>
+      body{
+        background-color: black;
+        color:white;
+      }
+     button{
+      background-color: black;
+      border: 1px solid white;
+      border-radius: 75px;
+      padding:10px;
+      margin-right: 20px;
+     }
+     #new{
+      background-color: white;
+      color:black;
+      border-radius: 5px;
+      display:block;
+     }
+     #new:hover{
+      background-color: rgb(211, 211, 211);
+     }
+    </style>
+  </head>
+  
+  <body>
+    <p><b>ROCK PAPER SCISSORS</b></p>
+    <button onclick="rock()"><img src="rock.png" style="height:50px;width:50px;"></button>
+    <button onclick="paper()"><img src="paper.png" style="height:50px;width:50px;"></button>
+    <button onclick="scissors()"><img src="scissors.png" style="height:50px;width:50px;"></button><br><br>
+    <p id="result"></p>
+    <p id="score"></p>
+    <button id="new" onclick="new_game()">NEW GAME</button>
+  </body>
+  <script>
+    let input=""
+    let c_input=""
+    let win=0;
+    let lose=0;
+    let tie=0;
+    //ROCK
+    function rock(){
+      input="ROCK";
+      c_input=Math.random();
+      if(c_input>0 && c_input<=1/3){
+        console.log("TIE");
+        c_input="ROCK"
+        tie+=1;
+        alert("TIE");
+      }
+      else if(c_input>1/3 && c_input<=2/3){
+        console.log("LOSE");
+        c_input="PAPER"
+        lose+=1;
+        alert("LOSE");
+      }
+      else{
+        console.log("WIN");
+        c_input="SCISSORS";
+        win+=1;
+        alert("WIN");
+      }
+      console.log("YOU CHOSE:"+input);
+      console.log("COMPUTER CHOSE:"+c_input);
+      console.log("WIN:"+win+"  LOSES:"+lose+"  TIE:"+tie);
+      //alert(`YOU CHOSE:${input}\nCOMPUTER CHOSE:${c_input}\nWIN:${win} LOSE:${lose} TIE:${tie}`);
+      document.getElementById("result").innerHTML=`YOU CHOSE:${input}\nCOMPUTER CHOSE:${c_input}`;
+      document.getElementById("score").innerHTML=`WIN:${win} LOSE:${lose} TIE:${tie}`;
+
+    }
+    //PAPER
+    function paper(){
+      input="PAPER";
+      c_input=Math.random();
+      if(c_input>0 && c_input<=1/3){
+        console.log("WIN");
+        c_input="ROCK";
+        win+=1;
+        alert("WIN");
+      }
+      else if(c_input>1/3 && c_input<=2/3){
+        console.log("TIE");
+        c_input="PAPER";
+        tie+=1;
+        alert("TIE");
+      }
+      else{
+        console.log("LOSE");
+        c_input="SCISSORS";
+        lose+=1;
+        alert("LOSE");
+      }
+      console.log("YOU CHOSE:"+input);
+      console.log("COMPUTER CHOSE:"+c_input);
+      console.log("WIN:"+win+"  LOSES:"+lose+"  TIE:"+tie);
+      //alert(`YOU CHOSE:${input}\nCOMPUTER CHOSE:${c_input}\nWIN:${win} LOSE:${lose} TIE:${tie}`);
+      document.getElementById("result").innerHTML=`YOU CHOSE:${input}\nCOMPUTER CHOSE:${c_input}`;
+      document.getElementById("score").innerHTML=`WIN:${win} LOSE:${lose} TIE:${tie}`;
+
+    }
+    //SCISSORS
+      function scissors(){
+      input="SCISSORS";
+      c_input=Math.random();
+      if(c_input>0 && c_input<=1/3){
+        console.log("LOSE");
+        c_input="ROCK";
+        lose+=1;
+        alert("LOSE");
+      }
+      else if(c_input>1/3 && c_input<=2/3){
+        console.log("WIN");
+        c_input="PAPER";
+        win+=1;
+        alert("WIN");
+      }
+      else{
+        console.log("TIE");
+        c_input="SCISSORS";
+        tie+=1;
+        alert("TIE");
+      }
+      console.log("YOU CHOSE:"+input);
+      console.log("COMPUTER CHOSE:"+c_input);
+      console.log("");
+      console.log("WIN:"+win+"  LOSES:"+lose+"  TIE:"+tie);
+      //alert(`YOU CHOSE:${input}\nCOMPUTER CHOSE:${c_input}\nWIN:${win} LOSE:${lose} TIE:${tie}`);
+      document.getElementById("result").innerHTML=`YOU CHOSE:${input}\nCOMPUTER CHOSE:${c_input}`;
+      document.getElementById("score").innerHTML=`WIN:${win} LOSE:${lose} TIE:${tie}`;
+
+
+    }
+    //RESET NEW GAME
+    function new_game(){
+      win=0;
+      lose=0;
+      tie=0;
+    }
+  </script>
+</html>
